@@ -1,0 +1,444 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* Persiapan Default */
+:root {
+  --red: #ff1d46;
+  --blue: #027fff;
+  --yellow: #ffc815;
+  --black: #202020;
+  --white1: #ffffff;
+  --white2: #e7e7e7;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+
+body::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 20px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100px;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 50%);
+  padding-left: 100px;
+  padding-right: 70px;
+  background-color: var(--white1);
+  z-index: 999;
+}
+
+nav {
+  transition: 0.2s ease-in;
+}
+
+header nav a {
+  margin-right: 38px;
+  margin-left: 38px;
+  color: black;
+}
+
+.logo h1 {
+  color: var(--red);
+  font-weight: 900;
+  font-style: italic;
+  font-size: 36px;
+}
+
+.logo h1 span {
+  color: var(--blue);
+}
+
+.navLainnya span {
+  width: 35px;
+  background-color: rgba(0, 0, 0, 70%);
+  height: 5px;
+  border-radius: 10px;
+  display: block;
+  margin: 5px 0px;
+  transition: all 0.5s ease-in-out;
+}
+
+.navLainnya {
+  display: none;
+}
+
+.home {
+  margin-top: 100px;
+  width: 100%;
+  min-height: 730px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/assets/image/backgroundHome.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.home h1 {
+  width: 90%;
+  max-width: 1100px;
+  text-align: center;
+  color: var(--white1);
+  font-weight: 900;
+  font-size: 4.5vw;
+  z-index: 1;
+}
+
+.home .backgroundBlack {
+  width: 100%;
+  min-height: 730px;
+  background-color: rgba(0, 0, 0, 50%);
+  position: absolute;
+}
+
+.about {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 150px 50px 0px 50px;
+}
+
+
+
+.aboutKanan {
+  width: 50%;
+}
+
+.content1 h1 {
+  width: 100%;
+  font-size: 50px;
+  color: var(--red);
+  font-weight: 900;
+  font-style: italic;
+}
+
+.content1 h1 span {
+  color: var(--blue);
+}
+
+.content1 h2 {
+  width: 100%;
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.content1 h3 {
+  width: 100%;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.content2 {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.content2 a {
+  margin: 10px;
+}
+
+.content2 #login {
+  background-color: var(--blue);
+  border-radius: 30px;
+  width: 50%;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 25px;
+  color: var(--white1);
+  font-weight: bold;
+  transition: 0.2s ease-in-out;
+}
+
+.content2 #signUp {
+  background-color: var(--white1);
+  border-radius: 30px;
+  border: 3px solid var(--blue);
+  width: 50%;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 25px;
+  color: var(--blue );
+  font-weight: bold;
+  transition: 0.2s ease-in-out;
+}
+
+.content2 #login:hover {
+  background-color: var(--red);
+}
+
+.content2 #signUp:hover {
+  background-color: var(--blue);
+  color: var(--white1);
+}
+
+.service {
+  text-align: center;
+  padding-top: 100px;
+}
+
+.service .containerService {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.service .containerService .serviceBox h2 {
+  color: var(--blue);
+}
+
+.service .containerService .serviceBox {
+  width: 400px;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
+.service .containerService .serviceBox img {
+  width: 240px;
+  height: 135px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 100px 20px 100px;
+  border-top: 0.5px solid rgba(0, 0, 0, 50%);
+  flex-wrap: wrap;
+}
+
+footer h1 {
+  font-size: 25px;
+  color: var(--red);
+  font-weight: 900;
+  font-style: italic;
+  text-align: center;
+}
+
+footer h1 span {
+  color: var(--blue);
+}
+
+footer p {
+  font-weight: bolder;
+  font-style: italic;
+  text-align: center;
+}
+
+@media (max-width: 1250px) {
+  .about {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .about .aboutKanan {
+    width: 100%;
+    text-align: center;
+  }
+
+  .about .aboutKiri {
+    width: 100%;
+    text-align: center;
+  }
+
+  .content2 #login:hover {
+    background-color: var(--red);
+  }
+  
+  .content2 #signUp:hover {
+    background-color: var(--blue);
+    color: var(--white1);
+  }
+  
+}
+
+@media (max-width: 992px) {
+  header {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  header .logo h1 {
+    font-size: 30px;
+  }
+
+  nav {
+    position: absolute;
+    background-color: var(--white2);
+    height: 100vh;
+    top: 0;
+    right: 0px;
+    opacity: 0;
+    padding-top: 100px;
+  }
+
+  header {
+    padding-right: 30px;
+  }
+
+  .navLainnya {
+    z-index: 999;
+    display: block;
+  }
+
+  nav a {
+    display: block;
+    text-align: center;
+    margin: 50px;
+    width: 200px;
+    font-size: 20px;
+  }
+
+  .navActive {
+    opacity: 1;
+  }
+
+  .navLainnya.active span:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 7px);
+  }
+
+  .navLainnya.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .navLainnya.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+  }
+
+  .home {
+    min-height: 500px;
+  }
+
+  .home h1 {
+    font-size: 30px;
+  }
+
+  .home .backgroundBlack {
+    min-height: 500px;
+  }
+
+  .home::before {
+    transform: none;
+  }
+
+  .content2 #login:hover {
+    background-color: var(--red);
+  }
+  
+  .content2 #signUp:hover {
+    background-color: var(--blue);
+    color: var(--white1);
+  }
+
+  footer h1 {
+    width: 100%;
+  }
+
+  footer p {
+    width: 100%;
+  }
+}
+
+
+
+/* Style untuk layar dengan lebar kurang dari 768px */
+@media only screen and (max-width: 767px) {
+  .about {
+    flex-direction: column;
+    padding: 100px 20px 0px 20px;
+  }
+  
+  .aboutKiri, .aboutKanan {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  
+  .aboutKiri img {
+    width: 100%;
+  }
+  
+  .content1 h1 {
+    font-size: 35px;
+    text-align: center;
+  }
+  
+  .content1 h2 {
+    font-size: 35px;
+    text-align: center;
+  }
+  
+  .content1 h3 {
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  .content2 {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .content2 a {
+    margin: 5px;
+    width: 100%;
+  }
+  
+  .content2 #login, .content2 #signUp {
+    width: 100%;
+    font-size: 20px;
+  }
+
+  .content2 #login:hover {
+    background-color: var(--red);
+  }
+  
+  .content2 #signUp:hover {
+    background-color: var(--blue);
+    color: var(--white1);
+  } 
+}
+
+
+@media (max-width: 480px) {
+  header .logo h1 {
+    font-size: 25px;
+  }
+}
