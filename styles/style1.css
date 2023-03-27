@@ -63,6 +63,12 @@ header nav a {
   margin-right: 38px;
   margin-left: 38px;
   color: black;
+  transition: 0.2s ease-in-out;
+}
+
+header nav a:hover {
+  font-weight: 900;
+  color: var(--red);
 }
 
 .logo h1 {
@@ -88,6 +94,7 @@ header nav a {
 
 .navLainnya {
   display: none;
+  cursor: pointer;
 }
 
 .home {
@@ -306,7 +313,7 @@ footer p {
     height: 100vh;
     top: 0;
     right: 0px;
-    opacity: 0;
+    transform: translateX(300px);
     padding-top: 100px;
   }
 
@@ -328,7 +335,7 @@ footer p {
   }
 
   .navActive {
-    opacity: 1;
+    transform: translateX(0);
   }
 
   .navLainnya.active span:nth-child(1) {

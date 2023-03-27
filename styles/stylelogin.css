@@ -1,0 +1,327 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* Persiapan Default */
+:root {
+  --red: #ff1d46;
+  --blue: #027fff;
+  --yellow: #ffc815;
+  --black: #202020;
+  --white1: #ffffff;
+  --white2: #e7e7e7;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 20px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+.kiri {
+  width: 50%;
+  position: relative;
+  width: 50%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.animasi1 {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  height: 100%;
+  transition: 0.2s linear;
+}
+
+.logo {
+  width: 100%;
+  padding: 25px 45px;
+}
+
+.logo h1 {
+  font-size: 50px;
+  font-weight: 900;
+  font-style: italic;
+  color: var(--red);
+}
+
+.logo h1 span {
+  color: var(--blue);
+}
+
+.opening {
+  margin-top: 100px;
+  padding-left: 45px;
+}
+
+.opening h1 {
+  font-weight: bolder;
+}
+
+.opening h3 {
+  font-weight: 500;
+}
+
+.formSignUp {
+  margin-top: 50px;
+  padding-left: 45px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+input {
+  margin-bottom: 30px;
+  width: 500px;
+  height: 60px;
+  border: 2px solid var(--black);
+  border-radius: 10px;
+  padding-left: 20px;
+}
+
+.button {
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button #login2 {
+  width: 200px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 2px solid var(--blue);
+  border-radius: 10px;
+  color: var(--blue);
+  text-align: center;
+  font-size: 15px;
+  font-weight: bolder;
+  transition: 0.2s linear;
+  background-color: white;
+}
+
+.button #login2:hover {
+  background-color: var(--blue);
+  color: var(--white1);
+}
+
+.button #login1 {
+  width: 200px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 2px solid var(--blue);
+  background-color: var(--blue);
+  border-radius: 10px;
+  color: var(--white1);
+  text-align: center;
+  font-size: 15px;
+  font-weight: 900;
+  transition: 0.2s linear;
+}
+
+.button #login1:hover {
+  background-color: var(--red);
+  border-color: var(--red);
+  cursor: pointer;
+}
+
+/* responsif */
+@media (max-width: 1150px) {
+  .animasi1 {
+    display: none;
+  }
+
+  .kiri {
+    width: 100%;
+    right: 0;
+  }
+
+  .logo {
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logo h1 {
+    font-size: 40px;
+  }
+
+  .opening {
+    padding-left: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .opening h1 {
+    width: 100%;
+  }
+
+  .opening h3 {
+    width: 100%;
+  }
+
+  .formSignUp {
+    padding-left: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 570px) {
+  .logo h1 {
+    font-size: 35px;
+  }
+
+  .opening h1 {
+    font-size: 25px;
+  }
+
+  .opening h3 {
+    font-size: 20px;
+  }
+
+  .formSignUp input {
+    width: 500px;
+    height: 60px;
+  }
+
+  .button {
+    flex-wrap: wrap;
+  }
+
+  .button #login2 {
+    width: 500px;
+  }
+
+  .button #login1 {
+    width: 500px;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 520px) {
+  .formSignUp input {
+    width: 400px;
+  }
+
+  .formSignUp form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .formSignUp label {
+    width: 100%;
+    text-align: center;
+  }
+
+  .button {
+    justify-content: center;
+  }
+
+  .button #login2 {
+    width: 400px;
+  }
+
+  .button #login1 {
+    width: 400px;
+  }
+
+  .logo img {
+    width: 300px;
+  }
+}
+
+@media (max-width: 425px) {
+  .opening h1 {
+    font-size: 20px;
+  }
+
+  .logo img {
+    width: 250px;
+  }
+  .opening {
+    margin-top: 40px;
+  }
+
+  .opening h3 {
+    font-size: 15px;
+  }
+
+  .formSignUp input {
+    height: 50px;
+    width: 350px;
+  }
+
+  .button #login2 {
+    width: 350px;
+    height: 50px;
+  }
+
+  .button #login1 {
+    width: 350px;
+    height: 50px;
+  }
+
+  .formSignUp {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+
+@media (max-width: 370px) {
+  .formSignUp {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+
+  .formSignUp input {
+    width: 300px;
+  }
+
+  .button #login2 {
+    width: 300px;
+    height: 50px;
+  }
+
+  .button #login1 {
+    width: 300px;
+    height: 50px;
+  }
+}
