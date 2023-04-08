@@ -68,7 +68,7 @@ if(isset($_POST["login"])) {
 
                     <div class="button">
                         <button type="submit" id="login1" name="login">Login</button>
-                        <a href="signUp.php" id="login2">Sign Up</a>
+                        <a href="signUp.php" id="login2" class="text-decoration-none">Sign Up</a>
                     </div>
                 </form>
             </div>

@@ -22,7 +22,7 @@
                     <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
                   </div>";
         } else {
-            $query = "INSERT INTO users
+            $query = "INSERT INTO users (id_user, username, password, email)
                         values
                         ('$id', '$nameUser', '$newPassword', '$emailUser')
                     ";
@@ -41,6 +41,7 @@
     }
     
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
