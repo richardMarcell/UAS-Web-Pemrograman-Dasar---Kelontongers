@@ -3,6 +3,10 @@ session_start();
 // Inisialisasi Database
 $db = mysqli_connect("localhost", "root", "", "kelontongers");
 
+if(isset($_SESSION["login"])) {
+    header("Location: homepage.php");
+    exit;
+  }
 
 if(isset($_POST["login"])) {
     global $db;
@@ -44,12 +48,12 @@ if(isset($_POST["login"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles/stylelogin.css">
-    <link rel="shortcut icon" href="assets/image/KN.png" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/stylelogin.css">
+    <link rel="shortcut icon" href="../assets/image/KN.png" type="image/x-icon">
     <title>Kelontongers | Login Form</title>
 </head>
 <body>
-    <img src="assets/image/backgroundHome.png" alt="" id="animasi" class="animasi1">
+    <img src="../assets/image/backgroundHome.png" alt="" id="animasi" class="animasi1">
         <div class="kiri">
             <div class="logo">
                 <h1>Kelonto<span>Ngers</span></h1>
