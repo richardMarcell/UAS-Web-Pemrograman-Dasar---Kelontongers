@@ -13,14 +13,13 @@
     $stores = mysqli_query($db, $query);
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>KelontoNgers | Home</title>
-    <link rel="stylesheet" href="../styles/homepagecss.css" />
+    <link rel="stylesheet" href="../styles/home.css" />
     <link
       rel="shortcut icon"
       href="../assets/image/KN.png"

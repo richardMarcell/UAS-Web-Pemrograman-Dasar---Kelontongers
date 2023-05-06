@@ -73,11 +73,6 @@ header nav a {
   text-decoration: none;
 }
 
-header nav a:first-child {
-  font-weight: 900;
-  color: var(--red);
-}
-
 header nav a:hover {
   font-weight: 900;
   color: var(--red);
