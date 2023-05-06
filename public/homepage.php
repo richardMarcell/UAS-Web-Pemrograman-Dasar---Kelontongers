@@ -34,20 +34,9 @@
     />
   </head>
   <body>
-    <header>
-      <div class="logo">
-        <h1>Kelonto<span>Ngers</span></h1>
-      </div>
-      <nav id="navigasi">
-        <a href="homepage.php">Home</a>
-        <a href="social.php">Social</a>
-      </nav>
-      <div class="navLainnya">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </header>
+    <?php
+      include 'component/header.php'
+    ?>
     <main>
       <div id="carouselExampleCaptions" class="carousel slide">
         <div class="carousel-indicators">
@@ -152,10 +141,9 @@
         <?php endwhile?>
       </div>
     </main>
-    <footer>
-      <h1>Kelonto<span>Ngers</span></h1>
-      <p>&copy; 2023 Kelontongers, All Rights Reserved</p>
-    </footer>
+    <?php
+      include 'component/footer.php';
+    ?>
     <script src="../script/script.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"

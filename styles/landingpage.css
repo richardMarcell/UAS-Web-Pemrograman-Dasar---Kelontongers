@@ -19,7 +19,6 @@ body::-webkit-scrollbar {
   width: 0.5em;
 }
 
-
 body::-webkit-scrollbar-thumb {
   background-color: #ccc;
   border-radius: 20px;
@@ -63,7 +62,6 @@ header nav a {
   margin-right: 38px;
   margin-left: 38px;
   color: black;
-  display: block;
   transition: 0.2s ease-in-out;
 }
 
@@ -134,8 +132,6 @@ header nav a:hover {
   padding: 150px 50px 0px 50px;
 }
 
-
-
 .aboutKanan {
   width: 50%;
 }
@@ -197,7 +193,7 @@ header nav a:hover {
   padding-top: 10px;
   padding-bottom: 10px;
   font-size: 25px;
-  color: var(--blue );
+  color: var(--blue);
   font-weight: bold;
   transition: 0.2s ease-in-out;
 }
@@ -288,12 +284,11 @@ footer p {
   .content2 #login:hover {
     background-color: var(--red);
   }
-  
+
   .content2 #signUp:hover {
     background-color: var(--blue);
     color: var(--white1);
   }
-  
 }
 
 @media (max-width: 992px) {
@@ -370,7 +365,7 @@ footer p {
   .content2 #login:hover {
     background-color: var(--red);
   }
-  
+
   .content2 #signUp:hover {
     background-color: var(--blue);
     color: var(--white1);
@@ -385,51 +380,51 @@ footer p {
   }
 }
 
-
-
 /* Style untuk layar dengan lebar kurang dari 768px */
 @media only screen and (max-width: 767px) {
   .about {
     flex-direction: column;
     padding: 100px 20px 0px 20px;
   }
-  
-  .aboutKiri, .aboutKanan {
+
+  .aboutKiri,
+  .aboutKanan {
     width: 100%;
     margin-bottom: 50px;
   }
-  
+
   .aboutKiri img {
     width: 100%;
   }
-  
+
   .content1 h1 {
     font-size: 35px;
     text-align: center;
   }
-  
+
   .content1 h2 {
     font-size: 35px;
     text-align: center;
   }
-  
+
   .content1 h3 {
     font-size: 20px;
     text-align: center;
   }
-  
+
   .content2 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-  
+
   .content2 a {
     margin: 5px;
     width: 100%;
   }
-  
-  .content2 #login, .content2 #signUp {
+
+  .content2 #login,
+  .content2 #signUp {
     width: 100%;
     font-size: 20px;
   }
@@ -437,13 +432,12 @@ footer p {
   .content2 #login:hover {
     background-color: var(--red);
   }
-  
+
   .content2 #signUp:hover {
     background-color: var(--blue);
     color: var(--white1);
-  } 
+  }
 }
-
 
 @media (max-width: 480px) {
   header .logo h1 {
