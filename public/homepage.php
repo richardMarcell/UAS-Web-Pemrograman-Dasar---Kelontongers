@@ -31,7 +31,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>KelontoNgers | Home</title>
-    <link rel="stylesheet" href="../styles/stylesforhome.css" />
+    <link rel="stylesheet" href="../styles/styletohome.css" />
     <link
       rel="shortcut icon"
       href="../assets/image/KN.png"
@@ -139,10 +139,8 @@
         </button>
       </div>
 
-      <div class="searchBox">
       <input type="search" name="search" id="search" placeholder="search store">
-      <label for="search"></label>
-      </div>
+
       <div class="storesBox" id="storeBox">
         <?php while($store = mysqli_fetch_assoc($stores)):?>
         <div class="card" style="width: 18rem">
@@ -207,5 +205,26 @@
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
       crossorigin="anonymous"
     ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        // Fungsi untuk menangani event saat input pencarian berubah
+        $('#search').on('input', function() {
+          let keyword = $(this).val(); // Mendapatkan nilai input pencarian
+
+          // Kirim permintaan Ajax ke server
+          $.ajax({
+            url: 'search.php', // Ganti dengan file PHP yang akan menghandle pencarian
+            method: 'POST',
+            data: { keyword: keyword }, // Kirim data pencarian ke server
+            success: function(response) {
+              // Tangani respons dari server
+              $('#storeBox').html(response); // Memperbarui konten div storeBox dengan hasil pencarian
+            }
+          });
+        });
+      });
+    </script>
+
   </body>
 </html>
