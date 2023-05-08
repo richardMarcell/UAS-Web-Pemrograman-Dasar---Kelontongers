@@ -7,7 +7,19 @@
 
     $db = mysqli_connect("localhost", "root", "", "kelontongers");
 
-    $query = "SELECT * FROM store";
+    $totalDataPerPage = 8;
+    $allDataStore = mysqli_query($db, "SELECT * FROM store");
+
+    
+    $amountOfStore = mysqli_num_rows($allDataStore);
+    
+    $totalPage =  floor($amountOfStore/$totalDataPerPage);
+
+    $activePage = (isset($_GET["page"])) ? $_GET["page"] : 1;
+
+    $firstData = ($totalDataPerPage * $activePage) - $activePage;
+
+    $query = "SELECT * FROM store LIMIT $firstData, $totalDataPerPage";
 
     
     $stores = mysqli_query($db, $query);
@@ -19,7 +31,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>KelontoNgers | Home</title>
-    <link rel="stylesheet" href="../styles/home.css" />
+    <link rel="stylesheet" href="../styles/stylesforhome.css" />
     <link
       rel="shortcut icon"
       href="../assets/image/KN.png"
@@ -31,6 +43,7 @@
       integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   </head>
   <body>
     <?php
@@ -84,10 +97,9 @@
               alt="..."
             />
             <div class="carousel-caption d-none d-md-block">
-              <h5>Review</h5>
+              <h5>Social</h5>
               <p>
-                Providing reviews from consumers regarding stores they have
-                previously visited.
+                provides social features to view business developments in Pontianak or Kubu Raya
               </p>
             </div>
           </div>
@@ -127,17 +139,63 @@
         </button>
       </div>
 
-      <div class="storesBox">
+      <div class="searchBox">
+      <input type="search" name="search" id="search" placeholder="search store">
+      <label for="search"></label>
+      </div>
+      <div class="storesBox" id="storeBox">
         <?php while($store = mysqli_fetch_assoc($stores)):?>
-          <div class="card" style="width: 18rem;">
-            <img src="<?= $store["image_store"]?>" class="card-img-top" alt="">
-            <div class="card-body">
-              <h5 class="card-title"><?= $store["name"]?></h5>
-              <p class="card-text"><?= $store["description"]?></p>
-              <a href="#" class="btn btn-primary">Detail</a>
-           </div>
+        <div class="card" style="width: 18rem">
+          <img src="<?= $store["image_store"]?>" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title"><?= $store["name"]?></h5>
+            <p class="card-text"><?= $store["description"]?></p>
+            <a href="#" class="btn btn-primary">Detail</a>
+          </div>
         </div>
         <?php endwhile?>
+      </div>
+      <div aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <li class="page-item">
+            <?php if($activePage >
+            1):?>
+            <a
+              class="page-link"
+              href="?page=<?= $activePage - 1?>"
+              >Previous</a
+            >
+            <?php endif;?>
+          </li>
+          <?php for($i = 1; $i <= $totalPage; $i++):?>
+          <?php if($i == $activePage):?>
+          <li class="page-item active">
+            <a
+              class="page-link"
+              href="?page=<?= $i;?>"
+              ><?= $i;?></a
+            >
+          </li>
+          <?php else:?>
+          <li class="page-item">
+            <a
+              class="page-link"
+              href="?page=<?= $i;?>"
+              ><?= $i;?></a
+            >
+          </li>
+          <?php endif?>
+          <?php endfor?>
+          <li class="page-item">
+            <?php if($activePage < $totalPage):?>
+            <a
+              class="page-link"
+              href="?page=<?= $activePage + 1?>"
+              >Next</a
+            >
+            <?php endif;?>
+          </li>
+        </ul>
       </div>
     </main>
     <?php

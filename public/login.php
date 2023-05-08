@@ -6,37 +6,35 @@ $db = mysqli_connect("localhost", "root", "", "kelontongers");
 if(isset($_SESSION["login"])) {
     header("Location: homepage.php");
     exit;
-  }
+}
 
 if(isset($_POST["login"])) {
-    global $db;
     $username = $_POST["username"];
     $query = "SELECT * from users where username = '$username' ";
     
-    // var_dump(mysqli_fetch_assoc(mysqli_query($db, $query)));
-    
-    $dataUserLogin = mysqli_fetch_assoc(mysqli_query($db, $query));
-    $id_user = $dataUserLogin["id_user"];
-    
-    if($dataUserLogin["username"] == $username) {
+    $result = mysqli_query($db, $query);
+    $dataUserLogin = mysqli_fetch_assoc($result);
+
+    if($dataUserLogin) {
         if(password_verify($_POST["password"], $dataUserLogin["password"])) {
             setcookie('username', $username, time() + 3600);
-            setcookie('id_user', $id_user, time() + 3600);
+            setcookie('id_user', $dataUserLogin["id_user"], time() + 3600);
             $_SESSION["login"] = true;
             header('Location: homepage.php');
+            exit;
         } else {
-            echo"
+            echo "
             <div class='alert alert-danger alert-dismissible fade show' style='z-index: 99999;' role='alert'>
-                Password Incorrect
-            <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-          </div>";
+                Username or password incorrect
+                <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+            </div>";
         }
     } else {
-        echo"
-            <div class='alert alert-danger alert-dismissible fade show' style='z-index: 99999;' role='alert'>
-                Username Incorrect
+        echo "
+        <div class='alert alert-danger alert-dismissible fade show' style='z-index: 99999;' role='alert'>
+            Username or password incorrect
             <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-          </div>";
+        </div>";
     }
 }
 ?>

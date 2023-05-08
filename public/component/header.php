@@ -25,6 +25,7 @@
       <nav id="navigasi">
         <a href="homepage.php">Home</a>
         <a href="social.php">Social</a>
+        <a href="logout.php" class="btn btn-danger fw-bold">Log Out</a>
       </nav>
       <div class="navLainnya">
         <span></span>
