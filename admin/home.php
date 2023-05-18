@@ -303,7 +303,7 @@ if (isset($_POST['add_store'])) {
         <!-- StoreBox End -->
 
         <!-- Paginagtion Start -->
-        <div aria-label="Page navigation example">
+        <div aria-label="Page navigation example" class="mt-3">
             <ul class="pagination justify-content-center">
                 <li class="page-item">
                     <?php if($activePage >
