@@ -1,12 +1,7 @@
 <?php
 session_start();
-// Inisialisasi Database
-$db = mysqli_connect("localhost", "root", "", "kelontongers");
 
-if(isset($_SESSION["login"])) {
-    header("Location: homepage.php");
-    exit;
-}
+include '../config/connection.php';
 
 if(isset($_POST["login"])) {
     $username = $_POST["username"];
@@ -20,7 +15,7 @@ if(isset($_POST["login"])) {
             setcookie('username', $username, time() + 3600);
             setcookie('id_user', $dataUserLogin["id_user"], time() + 3600);
             $_SESSION["login"] = true;
-            header('Location: homepage.php');
+            header('Location: home.php');
             exit;
         } else {
             echo "
@@ -46,7 +41,7 @@ if(isset($_POST["login"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
-    <link rel="stylesheet" href="../styles/stylelogin.css">
+    <link rel="stylesheet" href="../styles/styleforlogin.css">
     <link rel="shortcut icon" href="../assets/image/KN.png" type="image/x-icon">
     <title>Kelontongers | Login Form</title>
 </head>
@@ -70,7 +65,6 @@ if(isset($_POST["login"])) {
 
                     <div class="button">
                         <button type="submit" id="login1" name="login">Login</button>
-                        <a href="signUp.php" id="login2" class="text-decoration-none">Sign Up</a>
                     </div>
                 </form>
             </div>

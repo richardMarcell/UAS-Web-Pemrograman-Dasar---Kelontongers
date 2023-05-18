@@ -1,12 +1,6 @@
 <?php
-  session_start();
-
-  if (!isset($_SESSION["login"])) {
-    header("Location:login.php");
-    exit;
-  }
-
-  $db = mysqli_connect("localhost", "root", "", "kelontongers");
+   include '../config/connection.php';
+   include '../config/session.php';
 
   $keyword = $_POST['keyword']; // Mendapatkan keyword pencarian dari data yang dikirim melalui Ajax
 
