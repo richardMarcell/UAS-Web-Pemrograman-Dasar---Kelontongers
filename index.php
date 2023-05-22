@@ -70,7 +70,7 @@
     </header>
 
     <div class="home" id="home">
-      <h1>Support Small Businesses in Pontianak-Kubu Raya</h1>
+      <h1>Support Small Businesses in West Kalimantan</h1>
       <div class="backgroundBlack"></div>
     </div>
 
@@ -82,7 +82,7 @@
         <div class="content1">
           <h2>Find Your Daily Needs More Easily with</h2>
           <h1>Kelonto<span>Ngers</span></h1>
-          <h3>Online Catalog for Grocery Stores in Pontianak and Kubu Raya</h3>
+          <h3>Online Catalog for Grocery Stores in West Kalimantan</h3>
         </div>
       </div>
     </div>
@@ -96,7 +96,7 @@
             <h2 class="fw-bold">Information</h2>
             <p class="fw-semibold">
               The website provides various information related to grocery stores
-              in Kubu Raya and Pontianak.
+              in West Kalimantan.
             </p>
           </div>
         </div>
@@ -106,7 +106,7 @@
             <h2 class="fw-bold">Social</h2>
             <p class="fw-semibold">
               provides social features to view business developments in
-              Pontianak or Kubu Raya
+              West Kalimantan
             </p>
           </div>
         </div>
@@ -115,7 +115,7 @@
           <div class="contentService">
             <h2 class="fw-bold">Register</h2>
             <p class="fw-semibold">
-              Accepting grocery stores in Pontianak or Kubu Raya to register
+              Accepting grocery stores in West Kalimantan to register
               themselves.
             </p>
           </div>
