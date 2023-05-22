@@ -2,7 +2,7 @@
    include './config/connection.php';
 
    // Pagination
-   $totalDataPerPage = 8;
+   $totalDataPerPage = 4;
    $allDataStore = mysqli_query($db, "SELECT * FROM store");
 
    
@@ -123,43 +123,43 @@
       </div>
     </div>
 
-    <div class="storeBox mb-5" id="#store">
-  <h1 class="text-center fw-bold mt-5 mb-5">Store</h1>
-  <div class="storeFilter">
-    <form action="" method="GET" class="d-flex justify-content-center align-items-center container flex-wrap">
-      <div class="mb-3 mx-3" style="width:40%;">
-        <div class="form-floating">
-          <select class="form-select" name="category" id="category" aria-label="Floating label select example">
-            <option value="">All Categories</option>
-            <option value="Daily">Daily</option>
-            <option value="Food">Food</option>
-            <option value="Drink">Drink</option>
-            <option value="ATK">ATK</option>
-            <option value="Fuels">Fuels</option>
-            <option value="Beauty">Beauty</option>
-          </select>
-          <label for="category">Select The Category</label>
+  <div class="storeBox mb-5" id="store">
+    <h1 class="text-center fw-bold mt-5 mb-5">Store</h1>
+    <div class="storeFilter">
+      <form action="" method="GET" class="d-flex justify-content-center align-items-center container flex-wrap">
+        <div class="mb-3 mx-3" style="width:40%;">
+          <div class="form-floating">
+            <select class="form-select" name="category" id="category" aria-label="Floating label select example">
+              <option value="">All Categories</option>
+              <option value="Daily">Daily</option>
+              <option value="Food">Food</option>
+              <option value="Drink">Drink</option>
+              <option value="ATK">ATK</option>
+              <option value="Fuels">Fuels</option>
+              <option value="Beauty">Beauty</option>
+            </select>
+            <label for="category">Select The Category</label>
+          </div>
         </div>
-      </div>
-      <div class="mb-3 mx-3" style="width:40%;">
-        <div class="form-floating">
-          <select class="form-select" id="region" name="region" aria-label="Floating label select example">
-            <option value="">All Regions</option>
-            <option value="Kubu Raya">Kubu Raya</option>
-            <option value="Pontianak">Pontianak</option>
-            <option value="Bengkayang">Bengkayang</option>
-            <option value="Kapuas Hulu">Kapuas Hulu</option>
-            <option value="Landak">Landak</option>
-            <option value="Mempawah">Mempawah</option>
-          </select>
-          <label for="category">Select The Region</label>
+        <div class="mb-3 mx-3" style="width:40%;">
+          <div class="form-floating">
+            <select class="form-select" id="region" name="region" aria-label="Floating label select example">
+              <option value="">All Regions</option>
+              <option value="Kubu Raya">Kubu Raya</option>
+              <option value="Pontianak">Pontianak</option>
+              <option value="Bengkayang">Bengkayang</option>
+              <option value="Kapuas Hulu">Kapuas Hulu</option>
+              <option value="Landak">Landak</option>
+              <option value="Mempawah">Mempawah</option>
+            </select>
+            <label for="category">Select The Region</label>
+          </div>
         </div>
-      </div>
-      <div class="mb-3">
-        <button type="submit" style="height:3.5rem; width:10rem;" class="btn btn-primary">Filter</button>
-      </div>
-    </form>
-  </div>
+        <div class="mb-3">
+          <button type="submit" style="height:3.5rem; width:10rem;" class="btn btn-primary">Filter</button>
+        </div>
+      </form>
+    </div>
   <div class="d-flex justify-content-center align-items-center flex-wrap">
     <?php
     // Ambil nilai category dan region dari $_GET
