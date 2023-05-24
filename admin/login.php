@@ -15,6 +15,7 @@ if(isset($_POST["login"])) {
             setcookie('username', $username, time() + 3600);
             setcookie('id_user', $dataUserLogin["id_user"], time() + 3600);
             $_SESSION["login"] = true;
+            $_SESSION["username"] = $username;
             header('Location: home.php');
             exit;
         } else {

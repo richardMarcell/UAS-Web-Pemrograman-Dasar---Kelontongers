@@ -2,27 +2,7 @@
     include '../config/connection.php';
     include '../config/session.php';
 
-    // Pagination
-    $totalDataPerPage = 8;
-    $allDataStore = mysqli_query($db, "SELECT * FROM store");
-
-    
-    $amountOfStore = mysqli_num_rows($allDataStore);
-    
-    $totalPage =  floor($amountOfStore/$totalDataPerPage);
-
-    $activePage = (isset($_GET["page"])) ? $_GET["page"] : 1;
-
-    $firstData = ($totalDataPerPage * $activePage) - $totalDataPerPage;
-
-    if ($firstData >= $amountOfStore) {
-      $firstData = $amountOfStore - $totalDataPerPage;
-      if ($firstData < 0) {
-        $firstData = 0;
-      }
-    }
-
-    $query = "SELECT * FROM store LIMIT $firstData, $totalDataPerPage";
+    $query = "SELECT * FROM store";
     
     // Menampilkan data stores
     $stores = mysqli_query($db, $query);
@@ -173,8 +153,12 @@ if (isset($_POST['add_store'])) {
 
         <!-- store modal -->
         <div>
-            <button type="button" class="btn btn-primary mt-3 mx-3" data-bs-toggle="modal"
+           <div class="d-flex align-items-center justify-content-between px-2">
+                <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal"
                 data-bs-target="#exampleModal" data-bs-whatever="@mdo">Add Store</button>
+
+                <h5 class="fw-bold mt-3">Hello, <?= $_SESSION["username"]?></h5>
+           </div>
             <div class="modal fade modal- scrollable" id="exampleModal" tabindex="-1"
                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
@@ -298,38 +282,7 @@ if (isset($_POST['add_store'])) {
                 </tbody>
             </table>
         </div>
-
-
         <!-- StoreBox End -->
-
-        <!-- Paginagtion Start -->
-        <div aria-label="Page navigation example" class="mt-3">
-            <ul class="pagination justify-content-center">
-                <li class="page-item">
-                    <?php if($activePage >
-            1):?>
-                    <a class="page-link" href="?page=<?= $activePage - 1?>">Previous</a>
-                    <?php endif;?>
-                </li>
-                <?php for($i = 1; $i <= $totalPage; $i++):?>
-                <?php if($i == $activePage):?>
-                <li class="page-item active">
-                    <a class="page-link" href="?page=<?= $i;?>"><?= $i;?></a>
-                </li>
-                <?php else:?>
-                <li class="page-item">
-                    <a class="page-link" href="?page=<?= $i;?>"><?= $i;?></a>
-                </li>
-                <?php endif?>
-                <?php endfor?>
-                <li class="page-item">
-                    <?php if($activePage < $totalPage):?>
-                    <a class="page-link" href="?page=<?= $activePage + 1?>">Next</a>
-                    <?php endif;?>
-                </li>
-            </ul>
-        </div>
-        <!-- Pagination End -->
     </main>
     <?php
       include 'component/footer.php';
